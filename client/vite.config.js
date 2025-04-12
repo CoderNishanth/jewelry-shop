@@ -12,5 +12,8 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',  // Vercel will serve this folder as static content
+  },
+  server: {
+    historyApiFallback: true
   }
 })
