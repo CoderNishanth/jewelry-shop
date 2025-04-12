@@ -21,7 +21,7 @@ const AdminProducts = () => {
   const fetchProducts = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/products', {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/products`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -49,7 +49,7 @@ const AdminProducts = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/products', {
+      await axios.post(`${import.meta.env.VITE_API_URL}/products`, {
         ...formData,
         price: parseFloat(formData.price)
       }, {
@@ -80,7 +80,7 @@ const AdminProducts = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/products/${productId}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/products/${productId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

@@ -28,7 +28,7 @@ const InquiryForm = ({ wishlist }) => {
     setStatus({ submitting: true, submitted: false, error: null });
 
     try {
-      await axios.post('http://localhost:5000/inquiries', {
+      await axios.post(`${import.meta.env.VITE_API_URL}/inquiries`, {
         ...formData,
         wishlist: wishlist.map(item => item._id)
       });

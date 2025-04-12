@@ -15,7 +15,7 @@ const AdminInquiries = () => {
   const fetchInquiries = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/inquiries', {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/inquiries`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -34,7 +34,7 @@ const AdminInquiries = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/inquiries/${inquiryId}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/inquiries/${inquiryId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

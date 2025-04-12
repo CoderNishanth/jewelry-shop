@@ -10,7 +10,7 @@ const Products = ({ onAddToWishlist, wishlist }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/products');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/products`);
         setProducts(response.data);
       } catch (err) {
         setError('Failed to fetch products');
