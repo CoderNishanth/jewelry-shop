@@ -9,5 +9,8 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true
+  },
+  build: {
+    outDir: 'dist',  // Vercel will serve this folder as static content
   }
 })
